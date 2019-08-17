@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.ssh.action"/>
+    <context:component-scan base-package="com.ssh.dao"/>
+    <!--<bean id="userAction" class="com.ssh.action.UserAction" scope="prototype">-->
+        <!--<property name="userDao" ref="userDao"/>-->
+    <!--</bean>-->
+
+
+    <!--<bean name="userDao" id="userDao" class="com.ssh.dao.UserDao"/>-->
+
+    <!--&lt;!&ndash; 配置C3P0连接池 &ndash;&gt;-->
+    <!--<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+        <!--&lt;!&ndash; 数据库连接相关信息 &ndash;&gt;-->
+        <!--<property name="jdbcUrl" value="${jdbc.url}"/>-->
+        <!--<property name="driverClass" value="${jdbc.driverClass}"/>-->
+        <!--<property name="user" value="${jdbc.username}"/>-->
+        <!--<property name="password" value="${jdbc.password}"/>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 配置Hibernate的SessionFactory &ndash;&gt;-->
+    <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
+        <!--&lt;!&ndash; 注入连接池 &ndash;&gt;-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <!--&lt;!&ndash; 配置Hibernate属性 &ndash;&gt;-->
+        <!--<property name="hibernateProperties">-->
+            <!--<props>-->
+                <!--<prop key="hibernate.show_sql">true</prop>&lt;!&ndash; 是否展示SQL &ndash;&gt;-->
+                <!--<prop key="hibernate.hbm2ddl.auto">update</prop>&lt;!&ndash; 是否自动创建表结构 &ndash;&gt;-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+        <!--&lt;!&ndash; 扫描并加载注解过的实体类 &ndash;&gt;-->
+        <!--<property name="packagesToScan" value="org.ssh.*.model"/>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 用注解来实现事物管理 &ndash;&gt;-->
+    <!--<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">-->
+        <!--<property name="sessionFactory" ref="sessionFactory" />-->
+    <!--</bean>-->
+</beans>

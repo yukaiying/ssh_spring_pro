@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <package name="Struts" extends="struts-default">
+        <action name="login" class="com.ssh.action.UserAction">
+            <result name="success">
+                index.jsp
+            </result>
+            <result name="error">
+                login.jsp
+            </result>
+        </action>
+    </package>
+</struts>
